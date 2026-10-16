@@ -31,15 +31,18 @@ public class Game {
             out.print("Choose mode: ");
 
             int mode = readMenuChoice(1, 3);
-            if (mode == 3) {
-                out.println("Goodbye!");
-                return;
-            }
-
-            if (mode == 1) {
-                runOneVsOne();
-            } else {
-                runBattleRoyale();
+            switch (mode) {
+                case 1:
+                    runOneVsOne();
+                    break;
+                case 2:
+                    runBattleRoyale();
+                    break;
+                case 3:
+                    out.println("Goodbye!");
+                    return;
+                default:
+                    break;
             }
 
             out.println();
